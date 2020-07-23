@@ -1,0 +1,14 @@
+section.login
+  .container
+    .row
+      .col-xl-4.col-lg-6.col-md-10.offset-md-1.offset-xl-4
+        .card
+          .card-header
+            | SIGN IN TO CONTINUE
+          .card-body
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .form-inputs
+                = f.input :email, autofocus: true, placeholder: 'Email'
+                = f.input :password, placeholder: 'Password'
+              .form-actions
+                = f.button :submit, 'Login', class: 'btn btn-primary btn-block'

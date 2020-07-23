@@ -8,4 +8,8 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    - if current_user
+      = link_to destroy_user_session_path, method: :delete, class: 'sign-out'
+          = icon 'fas sign-out-alt', text: 'Đăng xuất'
+
     = yield
