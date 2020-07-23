@@ -3,21 +3,20 @@ after :roles do
 
   puts '--- Creating Teachers...'
 
-  teachers = User.create!([
-    { email: 'teacher@example.com',  password: '12345678' }
-  ])
+  teacher = Role.find_by_name('teacher')
+  student = Role.find_by_name('student')
 
-  teachers.each { |u| u.add_role :teacher }
+  User.create!([
+    { name: 'teacher', email: 'teacher@example.com', password: '12345678', role_ids: teacher.id }
+  ])
 
   puts 'Done!'
 
   puts '--- Creating Student...'
 
-  students = User.create!([
-    email: 'student@example.com', password: '12345678'
+  User.create!([
+    { name: 'student', email: 'student@example.com', password: '12345678', role_ids: student.id }
   ])
-
-  students.each { |u| u.add_role :student }
 
   puts 'Done!'
 end

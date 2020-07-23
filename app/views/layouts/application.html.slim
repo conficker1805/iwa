@@ -7,9 +7,11 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  body
+  body class="#{page_wrapper}"
     - if current_user
-      = link_to destroy_user_session_path, method: :delete, class: 'sign-out'
-          = icon 'fas sign-out-alt', text: 'Đăng xuất'
+      = render partial: 'layouts/shared/header'
 
+    = render partial: 'layouts/shared/flash_message'
     = yield
+
+    = javascript_init

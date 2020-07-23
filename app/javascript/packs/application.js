@@ -3,10 +3,24 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+window.$ = jQuery;
+global.$ = jQuery;
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("jquery")
+
+// Libraries
+import "bootstrap"
+import "selectize/dist/js/selectize"
+// TODO: Add rails.confirm
+
+// Components
+import "utils"
+import "init"
+import "components/users"
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -1,0 +1,50 @@
+.selectize-input {
+  height: 38px;
+  padding: 7.5px 12px;
+  @include -display-flex();
+  @include -box-shadow(none, !important);
+
+  > .item {
+    color: $default-text-color;
+  }
+
+  &.dropdown-active input, &.not-full input {
+    @include -flex(1);
+  }
+
+  @include -placeholder($input-placeholder-color);
+
+  &:after {
+    border: none !important;
+    content: '\f078' !important;
+    font-family: $font-awesome;
+    font-weight: 900;
+    font-size: 12px;
+    @include -transform-translate(-6px, -5px);
+    color: $default-text-color;
+  }
+
+  &.dropdown-active:after {
+    border: none !important;
+    content: '\f077' !important;
+    font-family: $font-awesome;
+    font-weight: 900;
+  }
+}
+
+.selectize-dropdown .option {
+  padding: 5px 12px;
+  color: $default-text-color;
+}
+
+.selectize-dropdown-content .option .highlight {
+  background: rgba(89, 187, 255, 0.2);
+}
+
+.selectize-control {
+  max-height: 38px;
+
+  &.text .selectize-input:after {
+    display: none;
+  }
+}

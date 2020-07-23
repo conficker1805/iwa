@@ -1,0 +1,15 @@
+.btn {
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:active {
+    @include -transform-scale(0.98);
+  }
+
+  &.simple {
+    border: 1px solid $bootstrap-border;
+    cursor: pointer;
+    color: $default-text-color;
+  }
+}

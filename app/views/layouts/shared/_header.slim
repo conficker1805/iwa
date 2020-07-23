@@ -1,0 +1,16 @@
+header
+  .container
+    .row
+      .col-md-4
+        .branch
+          = link_to root_path
+            = image_tag('branch.png', alt: 'IWA logo')
+      .col-md-8.text-right
+        ul.navigator
+          = active_link_to 'Users', users_path
+          = active_link_to 'Tests', tests_path
+          = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'sign-out'
+
+
+
+

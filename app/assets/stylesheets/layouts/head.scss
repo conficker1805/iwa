@@ -1,0 +1,12 @@
+.navigator {
+  > *:not(:last-child):after {
+    content: '';
+    width: 1px;
+    height: 15px;
+    position: relative;
+    display: inline-block;
+    background-color: #000;
+    margin: 0 8px;
+    top: 2px
+  }
+}

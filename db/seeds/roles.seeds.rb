@@ -3,9 +3,9 @@ ActiveRecord::Base.connection.execute("TRUNCATE users_roles RESTART IDENTITY CAS
 
 puts '--- Creating Roles...'
 
-Role.create([
-  { name: :teacher },
-  { name: :student }
+Role.create!([
+  { name: 'teacher' },
+  { name: 'student' }
 ])
 
 puts 'Done!'

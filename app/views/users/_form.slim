@@ -1,0 +1,8 @@
+= simple_form_for @user, url: url do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  - if current_user != @user
+    = f.input :role_ids, collection: Role.all
+  = f.submit 'Submmit', class: 'hide', id: 'new-user'

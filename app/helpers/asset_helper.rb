@@ -25,17 +25,4 @@ module AssetHelper
       }
     JS
   end
-
-  # def payload(e)
-  #   {
-  #     message: e.empty? ? t('.success', scope: :flash_message) : '',
-  #     errors: e.keys.zip(e.keys.map{|k| e.full_messages_for(k) }).to_h,
-  #     klass: e.marshal_dump.first.class.name.tableize.singularize.tr('/', '_')
-  #   }.to_json
-  # end
-
-  # def render_jsform(obj)
-  #   klass = "Trinity.errors.#{controller_path.tr('/', '_')}.init#{action_name.capitalize}"
-  #   "#{klass}( #{ payload(obj.errors) } )"
-  # end
 end

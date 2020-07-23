@@ -1,0 +1,9 @@
+.alert {
+  &.alert-message {
+    @extend .alert-danger !optional;
+  }
+
+  &.notice-message {
+    @extend .alert-info !optional;
+  }
+}

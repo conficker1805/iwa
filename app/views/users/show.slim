@@ -1,0 +1,29 @@
+.container
+  .row
+    .col-md-12
+      .nav
+        = link_to users_path, class: 'btn simple'
+          = icon 'fas reply', text: 'Back'
+
+        - if can? :edit, @user
+          = link_to edit_user_path(@user), class: 'btn simple'
+            = icon 'fas edit', text: 'Edit'
+        - if can? :destroy, @user
+          = link_to user_path(@user), class: 'btn simple', method: :delete, data: { confirm: "Are you sure?" }
+            = icon 'fas trash-alt', text: 'Destroy'
+
+    .col-md-4
+      table.table
+        caption User Deails
+        tbody
+          tr
+            th Name:
+            td = @user.name
+          tr
+            th Email:
+            td = @user.email
+          tr
+            th Role:
+            td = @user.roles.first.name
+
+

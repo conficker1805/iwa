@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-12
+      .nav
+        = link_to users_path, class: 'btn simple'
+          = icon 'fas reply', text: 'Back'
+        = link_to 'javascript:', class: 'btn simple jstrigger', data: { click: '#new-user' }
+          = icon 'fas save', text: 'Save'
+
+      = render partial: 'users/form', locals: { url: users_path }

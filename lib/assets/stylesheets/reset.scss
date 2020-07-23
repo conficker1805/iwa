@@ -1,0 +1,67 @@
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, img, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  font-family: $main-font;
+  font-weight: $main-font-regular;
+}
+
+p, a, div, th, td {
+  color: $default-text-color;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+input.form-control, textarea.form-control {
+  border-radius:         3px;
+  -moz-border-radius:    3px;
+  -webkit-border-radius: 3px;
+
+  &:focus {
+    @include -box-shadow(none);
+  }
+}
+
+.hint {
+  margin-top: 0px;
+}
+
+.btn:focus {
+  @include -box-shadow(none);
+}
+
+body {
+  a, a:hover, a:focus, a:active, a:visited {
+    text-decoration: none;
+  }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn.disabled {
+  @include -opacity(0.45);
+}
+
+.hide {
+  display: none !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
