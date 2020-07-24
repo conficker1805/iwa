@@ -1,0 +1,12 @@
+= simple_form_for @test, url: url, wrapper: :horizontal_form do |f|
+  = f.input :name
+  = f.input :description
+
+  .cocoon-property
+    = f.simple_fields_for :questions do |ff|
+      = render "#{ partials_path }/question_fields", { f: ff }
+    .question-properties-wrap
+      = link_to_add_association f, :questions, partial: "#{partials_path}/question_fields", 'association-insertion-node': 'question-properties-wrap', 'data-association-insertion-method': 'prepend', class: 'btn btn-default add-question hide'
+        = icon 'fas plus', text: 'Add question'
+
+  = f.submit 'Submit', id: 'new-test', class: 'hide'

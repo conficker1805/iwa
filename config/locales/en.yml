@@ -30,19 +30,28 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    format: "%{message}"
   activerecord:
+    attributes:
+      user:
+        role_ids: Role
     errors:
       models:
         user:
           attributes:
             role_ids:
-              must_have: user must have a role.
+              must_have: can't be blank
               fail_downgrade: cannot downgrade, please remove Tests of this user first.
         test/question:
           attributes:
             label:
               must_have_correct_answer: must have as least one correct answer.
               need_more_option: must have as least one option
+        test:
+          attributes:
+            name:
+              need_more_question: must have as least one question
 
   exception:
     action_controller/parameter_missing: Request is invalid.

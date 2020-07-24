@@ -1,7 +1,7 @@
-.container
-  .row
-    .col-md-12
-      - if !flash.empty?
+- if !flash.empty?
+  .container
+    .row
+      .col-md-12
         - flash.each do |key, value|
           = content_tag(:div, value, class: "alert #{key}-message")
 

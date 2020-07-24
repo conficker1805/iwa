@@ -1,0 +1,33 @@
+.alert {
+  &.alert-message {
+    @extend .alert-danger !optional;
+  }
+
+  &.notice-message {
+    @extend .alert-info !optional;
+  }
+}
+
+table .actions {
+  a:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.nav {
+  margin-bottom: 20px;
+
+  > * {
+    margin-right: 15px;
+  }
+}
+
+.form-control.is-valid {
+  background-image: none !important;
+  border-color: $bootstrap-border !important;
+}
+
+.form-control.is-valid:focus {
+  border-color: #80bdff !important;
+  @include -box-shadow(none, !important);
+}
