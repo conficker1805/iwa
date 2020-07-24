@@ -50,4 +50,22 @@ en:
     active_record/record_not_found: Your requested page is invalid.
     missing_token: Missing token.
 
+  flash_message:
+    user:
+      create:
+        success: Create User successfully.
+      update:
+        success: Update User successfully.
+      destroy:
+        success: Delete User successfully.
+    test:
+      create:
+        success: Create Test successfully.
+      update:
+        success: Update Test successfully.
+      destroy:
+        success: Delete Test successfully.
+    student:
+      unauthorized: Students are not allowed to login.
+
 

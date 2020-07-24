@@ -40,7 +40,7 @@ class TestsController < ApplicationController
     @test = Test.find(id)
     @test.destroy
 
-    redirect_to tests_path, notice: t('test.message.destroy.success')
+    redirect_to tests_path, notice: t('flash_message.test.destroy.success')
   end
 
   protected
