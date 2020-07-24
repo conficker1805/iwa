@@ -26,7 +26,7 @@ class AccountService
   end
 
   def auth_header
-    raise Error::InvalidCredential, I18n.t('err.credential.missing_token') if @headers['Authorization'].empty?
+    raise Error::InvalidCredential, I18n.t('exception.missing_token') if !@headers['Authorization']
     @headers['Authorization']
   end
 

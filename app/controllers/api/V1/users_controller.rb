@@ -5,9 +5,6 @@ module Api
         @user = AccountService.find(credential_params)
       end
 
-      def sign_out
-      end
-
       private
 
       def credential_params

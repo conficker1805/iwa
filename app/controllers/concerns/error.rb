@@ -5,6 +5,7 @@ module Error
 
   included do
     rescue_from ActionController::ParameterMissing, with: :formatted_error
+    rescue_from ActiveRecord::RecordNotFound, with: :formatted_error
     rescue_from Error::InvalidCredential, with: :formatted_error
   end
 
