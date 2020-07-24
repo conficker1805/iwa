@@ -1,0 +1,37 @@
+.container
+  .row
+    .col-md-12
+      .nav
+        - if can? :create, Test
+          = link_to new_test_path, class: 'btn simple'
+            = icon 'fas plus', text: 'New Test'
+
+      .table-responsive
+        table.table.table-striped
+          caption List of tests
+          thead
+            tr
+              th #
+              th Label
+              th Description
+              th Questions
+              th Actions
+
+          - @tests.each do |t|
+            tr
+              th = t.id
+              td = t.name
+              td = t.description
+              td = t.questions.size
+              td.actions
+                = link_to test_path(t)
+                  = icon 'fas eye'
+                  = link_to edit_test_path(t)
+                    = icon 'fas edit'
+
+                = link_to test_path(t), method: :delete, data: { confirm: "Are you sure?" }
+                  = icon 'fas trash-alt'
+
+
+
+

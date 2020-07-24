@@ -41,6 +41,7 @@ gem 'slim-rails'
 gem 'kaminari'
 gem 'simple_form'
 gem 'active_link_to'
+gem 'cocoon'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

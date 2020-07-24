@@ -3,12 +3,11 @@ class UsersController < ApplicationController
 
   def index
     # TODO: Add pagination
-    @users = User.all
   end
 
   def new
     @user = User.new
-end
+  end
 
   def create
     @user = User.new(user_full_params)

@@ -15,12 +15,15 @@ require("jquery")
 // Libraries
 import "bootstrap"
 import "selectize/dist/js/selectize"
+import "plugins/rails.cocoon.customize"
+
 // TODO: Add rails.confirm
 
 // Components
 import "utils"
 import "init"
 import "components/users"
+import "components/tests"
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

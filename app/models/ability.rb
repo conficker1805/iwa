@@ -10,6 +10,8 @@ class Ability
     if user.has_role? :teacher
       can :crud, User
       cannot :destroy, User, id: user.id
+
+      can :crud, Test
     end
 
     # Define abilities for the passed in user here. For example:

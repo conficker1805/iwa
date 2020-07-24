@@ -1,0 +1,11 @@
+.col-md-12.nested-block
+  .nested-fields.option
+    .row
+      .col-md-7
+        = f.input :label, label: false, wrapper: :vertical_form, placeholder: 'Option'
+      .col-md-2
+        = f.input :correctness, as: :boolean, label: 'Correct answer'
+      .col-md-1
+        = link_to_remove_association f, class: 'remove-option'
+          = icon 'fas trash-alt'
+

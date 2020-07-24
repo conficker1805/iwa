@@ -1,10 +1,11 @@
-class AddNameToUsers < ActiveRecord::Migration[6.0]
+class BootstrapDatabase < ActiveRecord::Migration[6.0]
   def change
     add_column :users, :name, :string
 
     create_table :tests do |t|
       t.string :name
-      t.text :desctiption
+      t.text :description
+      t.references :user, null: false, index: true
 
       t.timestamps null: false
     end

@@ -1,0 +1,14 @@
+.tests-show-container {
+  .question {
+    border: 1px dashed $bootstrap-border;
+    padding: 10px;
+  }
+
+  .option {
+    margin: 0;
+
+    &.true {
+      text-decoration: underline;
+    }
+  }
+}

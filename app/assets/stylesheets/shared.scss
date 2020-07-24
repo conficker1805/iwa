@@ -7,3 +7,9 @@
     @extend .alert-info !optional;
   }
 }
+
+table .actions {
+  a:not(:last-child) {
+    margin-right: 10px;
+  }
+}

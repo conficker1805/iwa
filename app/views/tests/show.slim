@@ -1,0 +1,33 @@
+.container
+  .row
+    .col-md-12
+      .nav
+        = link_to tests_path, class: 'btn simple'
+          = icon 'fas reply', text: 'Back'
+
+        - if can? :edit, @test
+          = link_to edit_test_path(@test), class: 'btn simple'
+            = icon 'fas edit', text: 'Edit'
+        - if can? :destroy, @test
+          = link_to test_path(@test), class: 'btn simple', method: :delete, data: { confirm: "Are you sure?" }
+            = icon 'fas trash-alt', text: 'Destroy'
+
+    .col-md-6
+      table.table
+        tbody
+          tr
+            th Name:
+            td = @test.name
+          tr
+            th Description:
+            td = @test.description
+
+      - @test.questions.each do |q|
+        .question
+          .bold = "Question: #{q.label}"
+          - q.options.each do |o|
+            p.option (class="#{o.correctness}") = o.label
+
+
+
+

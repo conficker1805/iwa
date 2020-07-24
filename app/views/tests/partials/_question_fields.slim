@@ -1,0 +1,15 @@
+.nested-block
+  .nested-fields.question
+    .row
+      .col-md-11
+        = f.input :label, label: false, placeholder: 'Give the question label here...', wrapper: :vertical_form
+      .col-md-1
+        = link_to_remove_association f, class: 'remove-question'
+          = icon 'fas trash-alt'
+    .row
+      = f.simple_fields_for :options do |ff|
+        = render "#{partials_path}/test_option_fields", { f: ff }
+      .test-options-wrap.col-md-3
+        = link_to_add_association f, :options, partial: "#{partials_path}/test_option_fields", 'association-insertion-node': 'test-options-wrap', class: 'btn btn-light add-option'
+          = icon 'fas plus', text: 'Add option'
+

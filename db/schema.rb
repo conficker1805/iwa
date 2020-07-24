@@ -25,6 +25,32 @@ ActiveRecord::Schema.define(version: 2020_07_23_102241) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
+  create_table "test_options", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "label"
+    t.boolean "correctness", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_test_options_on_question_id"
+  end
+
+  create_table "test_questions", force: :cascade do |t|
+    t.string "label"
+    t.bigint "test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_test_questions_on_test_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tests_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Associations
-  # has_many :tests, dependent: :destroy
+  has_many :tests, dependent: :destroy
 
   # Validations
   validates :name, presence: true
