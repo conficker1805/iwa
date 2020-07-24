@@ -11,16 +11,16 @@ class User < ApplicationRecord
   # Validations
   validates :name, presence: true
   validate :has_role
-  validate :valid_downgrade
+  validate :valid_downgrade, on: :update
 
   # User must have a role
   def has_role
     errors.add(:role_ids, :must_have) if roles.size != 1
   end
 
-  # User cannot downgrade anyone else account to Student if they have any test
+  # User cannot downgrade anyone else account to Student if that account have any test
   def valid_downgrade
-    # errors.add(:role_ids, :fail_downgrade) if has_role? :teacher && tests.any?
+    errors.add(:role_ids, :fail_downgrade) if roles.first.name == 'student' && tests.any?
   end
 
   def role

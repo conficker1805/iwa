@@ -37,7 +37,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    # TODO: can teacher delete tests of other teachers?
     @test = Test.find(id)
     @test.destroy
 
