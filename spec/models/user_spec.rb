@@ -80,7 +80,8 @@ describe User do
     let(:student) { create :student }
 
     it 'should return encrypted token' do
-      expect(student.token.length).to eq 107
+      expect(student.token).to be_an String
+      expect(student.token.length).to be > 100
     end
   end
 end

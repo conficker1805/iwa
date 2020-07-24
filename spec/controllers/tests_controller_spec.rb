@@ -6,8 +6,6 @@ describe TestsController, type: :controller do
   end
 
   let(:teacher) { create :teacher }
-  # let!(:role_teacher) { Role.find_by_name('teacher') }
-  # let!(:role_student) { Role.find_by_name('student') }
 
   before { sign_in teacher }
 
