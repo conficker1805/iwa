@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def token(exp = 24.hours.from_now.to_i)
-    payload = { user_id: id }
+    payload = { user_id: id, exp: exp }
     JWT.encode(payload, Rails.application.credentials.secret_key_base)
   end
 end

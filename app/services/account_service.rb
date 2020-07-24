@@ -13,7 +13,7 @@ class AccountService
   # Authenticate with email & password
   def self.find(params)
     cred = params[:credentials]
-    user = User.with_role(:teacher).find_by(email: cred[:email])
+    user = User.with_role(:student).find_by(email: cred[:email])
     raise Error::InvalidCredential if !user || !user.valid_password?(cred[:password])
     user
   end
@@ -21,7 +21,7 @@ class AccountService
   private
 
   def find_user_with_role!
-    user = User.with_role(:teacher).find_by(id: decoded_auth_token.try(:[], :user_id)&.to_i)
+    user = User.with_role(:student).find_by(id: decoded_auth_token.try(:[], :user_id)&.to_i)
     user || raise(Error::InvalidCredential)
   end
 
