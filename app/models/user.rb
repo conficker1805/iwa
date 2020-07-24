@@ -22,4 +22,13 @@ class User < ApplicationRecord
   def valid_downgrade
     # errors.add(:role_ids, :fail_downgrade) if has_role? :teacher && tests.any?
   end
+
+  def role
+    roles.first.name
+  end
+
+  def token(exp = 24.hours.from_now.to_i)
+    payload = { user_id: id }
+    JWT.encode(payload, Rails.application.credentials.secret_key_base)
+  end
 end

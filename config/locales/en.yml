@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+
+  exception:
+    action_controller/parameter_missing: Request is invalid.
+    error/invalid_credential: Invalid credentials, Please check again.
+
+

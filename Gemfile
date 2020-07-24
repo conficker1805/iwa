@@ -32,6 +32,7 @@ gem 'rolify'
 
 # Authentication
 gem 'devise'
+gem 'jwt'
 
 # Seeding
 gem 'seedbank'
